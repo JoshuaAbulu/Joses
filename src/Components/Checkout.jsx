@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { ItemNumberContext } from "./Contexts/ItemNumber";
+import { TotalValueContext } from "./Contexts/TotalValueContext";
 import { Formik, Form, Field, useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -37,6 +38,8 @@ const Checkout = () => {
           }),
           onSubmit: (values, {resetForm}) => {
             resetForm({values: ''})
+            setTotalValue(0)
+            setItems([])
             setSelectedCountry('')
           }
     })
@@ -44,6 +47,8 @@ const Checkout = () => {
     const [countries, setCountries] = useState([])
 
     const {items, setItems, eachItem, setEachItem} = useContext(ItemNumberContext)
+
+    const {totalValue, setTotalValue} = useContext(TotalValueContext)
     
     useEffect(() => {
         fetch("https://restcountries.com/v3.1/all")
@@ -74,10 +79,9 @@ const Checkout = () => {
 
     return ( 
         <form action="" onSubmit={formik.handleSubmit}>
-        <div className="flex place-items-center justify-center bg-gray-200">
-            <div className=" w-10/12 flex flex-col my-8">
-                <section className=" m-4 bg-white p-4">
-                    
+        <div className="flex place-items-center justify-center bg-gray-200 ">
+            <div className=" w-10/12 flex flex-col my-8 lg:grid lg:grid-cols-5">
+                <section className=" m-4 bg-white p-4 lg:col-span-3">
                     <h1 className="text-3xl font-extrabold">CHECKOUT</h1>
                     <div className="my-8">
                         <h2 className="text-xl text-orange-400 font-bold">Billing Details</h2>
@@ -131,21 +135,25 @@ const Checkout = () => {
                         <h2 className="text-xl text-orange-400 font-bold">Payment Details</h2>
                         <div className="flex flex-col my-2 gap-2">
                             <h3 className="text-lg font-bold">Payment Method</h3>
-                            <div className="grid grid-cols-2 gap-4 my-4">
-                            <label htmlFor="card" className="font-bold">Card: </label>
-                            <input type="radio" id="card" name="payment" value='card' checked={formik.values.payment === 'card'} onChange={(e) => {
+                            <div className="flex flex-col gap-4 my-4">
+                                <div className="flex justify-between">
+                            <label htmlFor="card" className="font-bold text-lg">Card: </label>
+                            <input type="radio" className="h-6 w-6" id="card" name="payment" value='card' checked={formik.values.payment === 'card'} onChange={(e) => {
                             formik.handleChange(e);
                                 if (e.target.checked) {
                                 setShowCard(true);
                             }
                             }}/>
-                            <label htmlFor="cash" className="font-bold">Cash on Delivery: </label>
-                            <input type="radio" id="cash" name="payment" value='cash' checked={formik.values.payment === 'cash'} onChange={(e) => {
+                            </div>
+                                <div className="flex justify-between">
+                            <label htmlFor="cash" className="font-bold text-lg">Cash on Delivery: </label>
+                            <input type="radio" className="h-6 w-6" id="cash" name="payment" value='cash' checked={formik.values.payment === 'cash'} onChange={(e) => {
                             formik.handleChange(e);
                                 if (e.target.checked) {
                                 setShowCard(false);
                             }
                             }}/>
+                            </div>
                             {formik.touched.payment && formik.errors.payment ? (
                                 <div className="text-red-500">{formik.errors.payment}</div>
                                 ) : null}
@@ -174,7 +182,7 @@ const Checkout = () => {
                     </div>
                     
                 </section>
-                <aside className="my-8 mx-4 bg-white p-4">
+                <aside className="my-8 mx-4 bg-white p-4 lg:col-span-2 lg:my-4">
                     <h1 className="text-3xl font-extrabold">SUMMARY</h1>
                     <div className="my-4 flex flex-col gap-4">
                         {items.map((e) => {

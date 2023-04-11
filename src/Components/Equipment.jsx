@@ -56,7 +56,7 @@ const Equipment = () => {
                     <h2 className='text-3xl font-extrabold text-orange-400'>${price.bpMonitor}</h2>
                     <p className='text-2xl font-bold text-gray-700'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, debitis!</p>
                     
-                    <div className='flex bg-orange-400 w-2/3 rounded-2xl justify-center place-items-center gap-4 p-2'>
+                    <div className='flex bg-orange-400 w-full rounded-2xl justify-center place-items-center gap-4 p-2'>
                         <button onClick = {() => 
                             {setTotalValue(totalValue+input1.value); 
                                 setEachItem((prev) => {
@@ -92,7 +92,7 @@ const Equipment = () => {
                     <h2 className='text-3xl font-extrabold text-orange-400'>${price.bpMonitor}</h2>
                     <p className='text-2xl font-bold text-gray-700'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, debitis!</p>
                     
-                    <div className='flex bg-orange-400 w-2/3 rounded-2xl justify-center place-items-center gap-4 p-2'>
+                    <div className='flex bg-orange-400 w-full rounded-2xl justify-center place-items-center gap-4 p-2'>
                         <button onClick = {() => 
                             {setTotalValue(totalValue+input2.value);
                                 setEachItem((prev) => {
@@ -128,7 +128,7 @@ const Equipment = () => {
                     <h2 className='text-3xl font-extrabold text-orange-400'>${price.bpMonitor}</h2>
                     <p className='text-2xl font-bold text-gray-700'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, debitis!</p>
                     
-                    <div className='flex bg-orange-400 w-2/3 rounded-2xl justify-center place-items-center gap-4 p-2'>
+                    <div className='flex bg-orange-400 w-full rounded-2xl justify-center place-items-center gap-4 p-2'>
                         <button onClick = {() => 
                             {setTotalValue(totalValue+input3.value); 
                                 setEachItem((prev) => {
@@ -164,7 +164,7 @@ const Equipment = () => {
                     <h2 className='text-3xl font-extrabold text-orange-400'>${price.bpMonitor}</h2>
                     <p className='text-2xl font-bold text-gray-700'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, debitis!</p>
                     
-                    <div className='flex bg-orange-400 w-2/3 rounded-2xl justify-center place-items-center gap-4 p-2'>
+                    <div className='flex bg-orange-400 w-full rounded-2xl justify-center place-items-center gap-4 p-2'>
                         <button onClick = {() => 
                             {setTotalValue(totalValue+input4.value);
                                 setEachItem((prev) => {
@@ -200,7 +200,7 @@ const Equipment = () => {
                     <h2 className='text-3xl font-extrabold text-orange-400'>${price.bpMonitor}</h2>
                     <p className='text-2xl font-bold text-gray-700'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, debitis!</p>
                     
-                    <div className='flex bg-orange-400 w-2/3 rounded-2xl justify-center place-items-center gap-4 p-2'>
+                    <div className='flex bg-orange-400 w-full rounded-2xl justify-center place-items-center gap-4 p-2'>
                         <button onClick = {() => 
                             {setTotalValue(totalValue+input5.value);
                                 setEachItem((prev) => {
@@ -236,7 +236,7 @@ const Equipment = () => {
                     <h2 className='text-3xl font-extrabold text-orange-400'>${price.bpMonitor}</h2>
                     <p className='text-2xl font-bold text-gray-700'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, debitis!</p>
                     
-                    <div className='flex bg-orange-400 w-2/3 rounded-2xl justify-center place-items-center gap-4 p-2'>
+                    <div className='flex bg-orange-400 w-full rounded-2xl justify-center place-items-center gap-4 p-2'>
                         <button onClick = {() => 
                             {setTotalValue(totalValue+input6.value); 
                                 setEachItem((prev) => {
