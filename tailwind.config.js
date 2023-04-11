@@ -6,6 +6,12 @@ module.exports = {
   theme: {
     
     extend: {
+      fontFamily: {
+        roboto: ['Robot'],
+        lora: ['Lora'],
+        cormorant: ['Cormorant'],
+        playfair: ['Playfair Display'],
+      },
       minHeight: {
         '1/6': '16.666667%',
       },

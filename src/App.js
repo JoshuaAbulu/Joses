@@ -62,24 +62,24 @@ function App() {
 
   return (
     
-    <div className="App h-screen w-screen scroll-smooth">
+    <div className="App h-screen w-screen scroll-smooth font-roboto">
       <PriceContext.Provider value={price}>
         <ValueContext.Provider value={useInput}>
-        <GlovesValueContext.Provider value={{glovesValue, setGlovesValue, babyValue, setBabyValue, bpValue, setBpValue}}>
-          <TotalValueContext.Provider value={{totalValue, setTotalValue}}>
-            <ItemNumberContext.Provider value={{items, setItems, eachItem, setEachItem}}>
-        <Navigation />
-          <Routes>
-            <Route path='/' element={<Homepage />} />
-            <Route path='/consumables' element={<Consumables />} />
-            <Route path='/equipment' element={<Equipment />} />
-            <Route path='/baby' element={<Baby />} />
-            <Route path='/checkout' element={<Checkout />} />
-          </Routes>
-        <Footer />
-        </ItemNumberContext.Provider>
-        </TotalValueContext.Provider>
-        </GlovesValueContext.Provider>
+          <GlovesValueContext.Provider value={{glovesValue, setGlovesValue, babyValue, setBabyValue, bpValue, setBpValue}}>
+            <TotalValueContext.Provider value={{totalValue, setTotalValue}}>
+              <ItemNumberContext.Provider value={{items, setItems, eachItem, setEachItem}}>
+                <Navigation />
+                  <Routes>
+                    <Route path='/' element={<Homepage />} />
+                    <Route path='/consumables' element={<Consumables />} />
+                    <Route path='/equipment' element={<Equipment />} />
+                    <Route path='/baby' element={<Baby />} />
+                    <Route path='/checkout' element={<Checkout />} />
+                  </Routes>
+                <Footer />
+              </ItemNumberContext.Provider>
+             </TotalValueContext.Provider>
+          </GlovesValueContext.Provider>
         </ValueContext.Provider>
       </PriceContext.Provider>
     </div>
